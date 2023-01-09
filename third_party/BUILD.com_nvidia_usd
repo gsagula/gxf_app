@@ -1,0 +1,53 @@
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "usd_srcs",
+    srcs = glob([
+        "lib/**/*",
+        "lib64/**/*",
+        "plugin/**/*",
+        "include/**/*",
+        "python/lib/**/*.so*",
+        "python/lib/**/*.py",
+        "python/include/**/*.h",
+        "python/include/**/*.hpp",
+    ]),
+)
+
+cc_library(
+    name = "usd",
+    srcs = glob([
+        "lib/**/*.so*",
+        "lib64/**/*.so*",
+        "plugin/**/*.so*",
+        "share/**/*.so*",
+    ]),
+    hdrs = glob([
+        "include/**/*.h",
+        "include/**/*.hpp",
+    ]),
+    data = [
+        ":usd_srcs",
+    ],
+    includes = ["include"],
+    deps = [
+        ":python",
+    ],
+)
+
+cc_library(
+    name = "python",
+    srcs = glob([
+        "python/lib/**/*.so*",
+    ]),
+    hdrs = glob([
+        "python/include/python3.7m/**/*.h",
+        "python/include/python3.7m/**/*.hpp",
+    ]),
+		data = [
+        ":usd_srcs",
+    ],
+    includes = ["python/include/python3.7m"],
+)

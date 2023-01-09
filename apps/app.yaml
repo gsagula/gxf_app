@@ -1,0 +1,22 @@
+
+%YAML 1.2
+---
+dependencies:
+- extension: usd_extension
+  uuid: 0f33c3a8-3764-3bf3-b49a-7acf301d9de3
+  version: 1.0.0
+---
+name: source
+components:
+- name: signal
+  type: sample::usd_extension::usd_codelet
+- type: nvidia::gxf::CountSchedulingTerm
+  parameters:
+    count: 10
+---
+components:
+- type: nvidia::gxf::GreedyScheduler
+  parameters:
+    realtime: false
+    max_duration_ms: 1000000
+  
