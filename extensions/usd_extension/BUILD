@@ -41,4 +41,16 @@ register_extension(
     uuid = "0f33c3a8-3764-3bf3-b49a-7acf301d9de3",
     version = "1.0.0",
     visibility = ["//visibility:public"],
+    headers = [
+        "@com_nvidia_usd//:headers",
+    ],
+    binaries = [
+        "@com_nvidia_usd//:binaries",
+    ],
+    python_sources = [
+        "@com_nvidia_usd//:python_sources",
+    ],
+    python_bindings = [
+        "@com_nvidia_usd//:python_binaries",
+    ],
 )

@@ -3,6 +3,35 @@ package(
 )
 
 filegroup(
+    name = "binaries",
+    srcs = glob([
+        "**/*.so",
+    ]),
+)
+
+filegroup(
+    name = "headers",
+    srcs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+)
+
+filegroup(
+    name = "python_binaries",
+    srcs = glob([
+        "python/**/*.so",
+    ]),
+)
+
+filegroup(
+    name = "python_sources",
+    srcs = glob([
+        "python/**/*.py",
+    ]),
+)
+
+filegroup(
     name = "usd_srcs",
     srcs = glob([
         "lib/**/*",
