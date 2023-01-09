@@ -1,6 +1,6 @@
 # GXF Extension for Linux x86_64
 
-Plain generated GXF Extension created based on Nvidia Graph [instructions](https://resources.nvidia.com/en-us-deepstream-get-started-with-graph-composer/started-with-graphcomposer). This application has one dependency on Nvidia pre-compiled USD [binaries](https://developer.nvidia.com/usd).
+Plain generated GXF Extension created based on Nvidia Graph [instructions](https://docs.nvidia.com/metropolis/deepstream/dev-guide/graphtools-docs/docs/text/GraphComposer_Dev_Workflow.html#generating-a-non-deepstream-gstreamer-extension). This application has one dependency on Nvidia pre-compiled USD [binaries](https://developer.nvidia.com/usd).
 
 ### Pre-requisites
 
