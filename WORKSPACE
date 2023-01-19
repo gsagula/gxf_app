@@ -2,16 +2,9 @@
 _workspace_name = "usd_extension"
 workspace(name = _workspace_name)
 
-local_repository(
-    name = "com_extension_dev",
-    path = "/opt/nvidia/graph-composer/extension-dev"
-)
+local_repository(name = "com_extension_dev", path = "/opt/nvidia/graph-composer/extension-dev")
 
-load(
-    "@com_extension_dev//build:graph_extension.bzl",
-    "graph_nvidia_extension",
-)
-
+load("@com_extension_dev//build:graph_extension.bzl", "graph_nvidia_extension")
 load("@com_extension_dev//build/toolchain:toolchain.bzl", "toolchain_configure")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")

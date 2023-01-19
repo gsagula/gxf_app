@@ -22,6 +22,21 @@ graph_cc_extension(
     ],
 )
 
+filegroup(
+    name = "binaries",
+    srcs = glob([
+        "**/*.so",
+    ]),
+)
+
+filegroup(
+    name = "headers",
+    srcs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+)
+
 register_extension(
     name = "register_usd_extension_ext",
     badges = [""],
